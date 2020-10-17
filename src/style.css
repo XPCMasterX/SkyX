@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+p {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.hey-p {
+    font-size: 50px;
+}
+
+.content {
+    position: fixed;
+    top: -5%;
+    left: -5%;
+    right: -5%;
+    z-index: -1;
+    display: block;
+    /* Full height */
+    width: 110%;
+    height: 110%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p:not(.notblur) {
+    filter: blur(5px);
+}
+
+.notblur {
+    text-align: center;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    filter: none !important;
+}
