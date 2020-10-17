@@ -46,3 +46,8 @@ p:not(.notblur) {
     width: 50%;
     filter: none !important;
 }
+
+.settings {
+    float: right;
+    margin: 2%;
+}
