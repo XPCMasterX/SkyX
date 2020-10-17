@@ -8,9 +8,7 @@ async function getLocation() {
 }
 
 const api_key = '50e4f70c56b00853879e0416cc949949';
-let units = 'metric';
-const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=${units}`;
-console.log(url);
+let units = 'metric'; 
 
 let images = {
     thunderstorm: {
@@ -43,14 +41,16 @@ let images = {
     },
 };
 
-async function getReq() {
+async function getReq(city, units) {
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=${units}`;
     let rawJSON = await fetch(url);
     let json = await rawJSON.json();
     return json;
 }
 
 async function refreshWeather() {
-    let data = await getReq();
+    let city = await getLocation();
+    let data = await getReq(city, units);
 
     setBlur();
     setImageAndTextColor(data);
